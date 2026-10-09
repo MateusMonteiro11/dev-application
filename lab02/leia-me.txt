@@ -1,0 +1,5 @@
+Para rodar a aplicação execute os seguintes comandos no terminal:
+npm install
+npm run dev
+
+O projeto irá gerar um localhost, abra-o e verifique se o site funciona.
