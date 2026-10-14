@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav,
+.opcoes,
+.placar,
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+section {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #888;
+}
+
+button,
+input {
+  padding: 6px 10px;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.placar {
+  padding: 10px;
+  border: 1px solid #bbb;
+}
+
+.placar span {
+  margin-right: 10px;
+}
+
+.resultado-final {
+  padding: 10px;
+  font-weight: bold;
+  background: #ffff99;
+}
