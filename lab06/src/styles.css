@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  width: min(100% - 32px, 360px);
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.app h1 {
+  margin-top: 0;
+}
+
+.alarm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alarm-form input {
+  width: 100%;
+  padding: 8px;
+}
+
+.alarm-form button,
+.alarm-alert button {
+  margin-top: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.message {
+  margin: 4px 0 0;
+}
+
+.current-date-time {
+  margin-top: 20px;
+}
+
+.current-date-time p {
+  margin: 6px 0;
+}
+
+.alarm-alert {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.alarm-alert img {
+  width: 100%;
+  height: auto;
+}
