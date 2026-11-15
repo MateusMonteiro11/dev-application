@@ -1,0 +1,12 @@
+Para rodar a aplicação execute os seguintes comandos no terminal:
+npm install
+npm run dev
+
+O projeto irá gerar um localhost, abra-o e verifique se o site funciona.
+
+Crie uma conta na tela de cadastro e depois faça login com o e-mail e a senha.
+Os cadastros ficam salvos no AsyncStorage, no navegador utilizado.
+Após entrar, escolha Adivinhação ou Pedra, papel e tesoura.
+Use Voltar para jogos para escolher outro jogo e Sair para retornar ao login.
+
+O login é uma simulação local para a atividade, sem servidor de autenticação.

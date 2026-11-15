@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+nav,
+.opcoes,
+.placar,
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+section {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #888;
+}
+
+button,
+input {
+  padding: 6px 10px;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #3157a4;
+  outline-offset: 3px;
+}
+
+.acesso {
+  max-width: 360px;
+}
+
+.acesso form,
+.acesso fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.acesso fieldset {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.acesso input {
+  min-width: 0;
+}
+
+.erro {
+  color: #a01818;
+}
+
+.placar {
+  padding: 10px;
+  border: 1px solid #bbb;
+}
+
+.placar span {
+  margin-right: 10px;
+}
+
+.resultado-final {
+  padding: 10px;
+  font-weight: bold;
+  background: #ffff99;
+}

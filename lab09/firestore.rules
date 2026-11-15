@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthenticated() { return request.auth != null; }
+    function isOwner(uid) { return isAuthenticated() && request.auth.uid == uid; }
+    function isAdmin() {
+      return isAuthenticated() && exists(/databases/$(database)/documents/administradores/$(request.auth.uid));
+    }
+    function isValidOrder(data) {
+      let menu = {
+        'burger': { 'nome': 'Burger da casa', 'preco': 3290 },
+        'pizza': { 'nome': 'Pizza margherita', 'preco': 4590 },
+        'massa': { 'nome': 'Massa ao pesto', 'preco': 3890 },
+        'bowl': { 'nome': 'Bowl de vegetais', 'preco': 2990 },
+        'salmao': { 'nome': 'Salmão grelhado', 'preco': 5990 }
+      };
+      let fields = ['uid', 'nomeCliente', 'pratoId', 'prato', 'quantidade', 'precoUnitarioCentavos', 'valorTotalCentavos', 'criadoEm'];
+      return data.keys().hasAll(fields) && data.keys().hasOnly(fields)
+        && data.uid is string && data.uid.size() > 0 && data.uid.size() <= 128
+        && data.uid == request.auth.uid
+        && data.nomeCliente is string && data.nomeCliente.size() >= 2 && data.nomeCliente.size() <= 80
+        && data.nomeCliente == request.auth.token.name
+        && data.pratoId is string && data.pratoId.size() <= 20 && data.pratoId in menu
+        && data.prato is string && data.prato.size() <= 80 && data.prato == menu[data.pratoId].nome
+        && data.quantidade is int && data.quantidade >= 1 && data.quantidade <= 20
+        && data.precoUnitarioCentavos is int && data.precoUnitarioCentavos == menu[data.pratoId].preco
+        && data.valorTotalCentavos is int && data.valorTotalCentavos == data.precoUnitarioCentavos * data.quantidade
+        && data.criadoEm is timestamp && data.criadoEm == request.time;
+    }
+    match /pedidos/{pedidoId} {
+      allow create: if isAuthenticated() && isValidOrder(request.resource.data);
+      allow get: if isAuthenticated() && (!exists(/databases/$(database)/documents/pedidos/$(pedidoId)) || isOwner(resource.data.uid) || isAdmin());
+      allow list: if isAdmin();
+      allow update, delete: if false;
+    }
+    match /administradores/{uid} {
+      allow get: if isOwner(uid);
+      allow list, create, update, delete: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

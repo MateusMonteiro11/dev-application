@@ -1,0 +1,8 @@
+﻿{
+  "expo": {
+    "name": "Lista de Filmes",
+    "slug": "lista-filmes",
+    "version": "1.0.0",
+    "orientation": "portrait"
+  }
+}

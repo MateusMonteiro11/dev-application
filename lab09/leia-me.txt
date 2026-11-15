@@ -1,0 +1,14 @@
+Para rodar a aplicação execute os seguintes comandos no terminal:
+npm install
+npm run dev
+
+O projeto irá gerar um localhost, abra-o e verifique se o site funciona.
+
+Faça um login na aplicação ou crie uma conta, a .env será armazenada e compartilhada somente com o docente responsável.
+Banco de dados armazenado remotamente via Firebase
+
+email e senha da conta administradora:
+mateusinaciomonteiro519@gmail.com
+ZvBhen86gS7MurZnOfJBc_mEw4Ta!Aa9
+
+Aplicação feita em react.js para rodar em qualquer ambiente, suas respectivas interfaces, lógicas e chamadas no banco são validas também para React Native

@@ -1,0 +1,6 @@
+Fotografias ilustrativas dos pratos:
+burger.jpg: https://images.unsplash.com/photo-1568901346375-23c9450c58cd
+pizza.jpg: https://images.unsplash.com/photo-1574071318508-1cdbab80d002
+massa.jpg: https://images.unsplash.com/photo-1473093295043-cdd812d0e601
+bowl.jpg: https://images.unsplash.com/photo-1546069901-ba9599a7e63c
+salmao.jpg: https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2

@@ -6,7 +6,7 @@ class AlarmAlert extends React.Component {
 
     return (
       <section className="alarm-alert" role="alert">
-        <p>O alarme está despertando!</p>
+        <p>AAAAAACOOOOORRRDAA MOFIIII !</p>
         <img src="/Alarme.gif" alt="Relógio despertador tocando" />
         <button type="button" onClick={onStop}>Parar alarme</button>
       </section>
